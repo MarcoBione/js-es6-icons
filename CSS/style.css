@@ -26,12 +26,22 @@
     color: var(--steel-blue);
     font-weight: bold;
     width: 10%;
+    cursor: pointer;
 }
 
 ._mytitle{
     color: var(--ice-blue);
 }
 
-.card h1{
-    color: var(--outer-space);
+.container, .card h1{
+    color: var(--ice-blue);
+}
+
+.card{
+    color: var(--mint-green);
+    box-shadow: 2px 2px 5px var(--mint-green)!important;
+    background-color: var(--outer-space);
+    border-radius: 10px;
+    max-width: calc(100% / 5);
+    cursor: pointer;
 }
