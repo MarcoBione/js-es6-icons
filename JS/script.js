@@ -194,6 +194,7 @@ function application() {
         <!-- options -->
         <select class="form-select _myselectbar py-0">
             <option value="all" selected class="_myoptions">All</option>
+            <option value="animal" class="_myoptions">Animal</option>
             <option value="vegetables" class="_myoptions">Vegetables</option>
             <option value="Users" class="_myoptions">Users</option>
         </select>
@@ -215,12 +216,12 @@ function application() {
     const vegetableArray = [];
     const userArray = [];
     //cycle for load icons array to new three different array
-    for(let y = 0; y < icons.length; y++){
-        if((icons[y].type == 'animal')){
+    for (let y = 0; y < icons.length; y++) {
+        if ((icons[y].type == 'animal')) {
             animalArray.push(icons[y]);
-        }else if (icons[y].type == 'vegetable'){
+        } else if (icons[y].type == 'vegetable') {
             vegetableArray.push(icons[y]);
-        }else{
+        } else {
             userArray.push(icons[y]);
         }
     };
@@ -230,6 +231,11 @@ function application() {
     console.log(vegetableArray);
     //user
     console.log(userArray);
+
+    const selector = document.querySelector('select');
+    selector.addEventListener('change',() => {
+        console.log(selector.value)});
+
 
     //load animal array of elements to display
     let animalCards = '';
@@ -261,16 +267,6 @@ function application() {
     //renderizzo tutte le cards
     box.innerHTML += userCards;
 
-
-
-    const allIcons = document.querySelectorAll('h2')
-    //console.log(allIcons);
-    for(let x = 0; x < allIcons.length; x++){
-        if(allIcons[x].type == 'animal'){
-            //console.log(allIcons[x]);
-        }
-    }
-    
 
 }
 
