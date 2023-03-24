@@ -179,8 +179,11 @@ function application() {
     //append header
     document.querySelector('.app').appendChild(header);
 
+    //create a container for center the cards created
     const box = document.createElement('div');
+    //add container bootstrap class to div
     box.classList.add('container');
+    //append 'div' to app general container
     app.appendChild(box);
 
     //load array of elements to display
@@ -190,7 +193,7 @@ function application() {
         content += template;
     }
     //console.log(content);
-    //renderizzo tutte le
+    //renderizzo tutte le cards
     box.innerHTML += content;
 
 }
