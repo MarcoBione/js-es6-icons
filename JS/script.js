@@ -140,6 +140,18 @@ const icons = [
     }
 ];
 
+function createCards(icons) {
+    const card = `
+    <div class="card">
+      <h1 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name}" alt="${icons.type}">
+      <div class="card-body">
+        <h5 class="card-title">${icons.name}</h5>
+      </div>
+    </div>
+    `;
+    return card;
+}
+
 function application() {
 
     //load app container to script
@@ -150,7 +162,7 @@ function application() {
 
     //create header
     const header = document.createElement('header');
-    header.innerHTML = `
+    header.innerHTML += `
     <div class="container"
         <!-- title -->
         <h1 class="_mytitle">Choose icon!</h1>
@@ -168,9 +180,14 @@ function application() {
     document.querySelector('.app').appendChild(header);
 
     //load array of elements to display
-    for(let i = 0; i < icons.length; i++){
-        console.log(icons[i]);
+    let content = '';
+    for (let i = 0; i < icons.length; i++) {
+        const template = createCards(icons[i]);
+        content += template;
     }
+    console.log(content);
+    //renderizzo tutte le
+    app.innerHTML += content;
 
 }
 

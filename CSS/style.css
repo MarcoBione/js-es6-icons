@@ -31,3 +31,7 @@
 ._mytitle{
     color: var(--ice-blue);
 }
+
+.card h1{
+    color: var(--outer-space);
+}
