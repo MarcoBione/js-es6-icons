@@ -1,5 +1,20 @@
-*{
-    margin : 0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* CSS HEX COLORS PALETTE*/
+:root {
+    --sage: #b5ba72ff;
+    --battleship-gray: #99907dff;
+    --mountbatten-pink: #7d6f86ff;
+    --ultra-violet: #585191ff;
+    --tekhelet: #4f359bff;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--mountbatten-pink);
 }
