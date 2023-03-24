@@ -140,12 +140,36 @@ const icons = [
     }
 ];
 
-function createCards(icons) {
+function createAnimalCards(icons) {
     const card = `
     <div class="card text-center">
       <div class="card-body">
-        <h1 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name}" alt="${icons.type}">
-        <h5 class="card-title">${icons.name}</h5>
+        <h2 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name} _myanimalcards-icons" alt="${icons.type}"></h2>
+        <h5 class="card-title _myanimalcards-icons">${icons.name}</h5>
+      </div>
+    </div>
+    `;
+    return card;
+}
+
+function createVegetableCards(icons) {
+    const card = `
+    <div class="card text-center">
+      <div class="card-body">
+        <h2 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name} _myavegetablecards-icons" alt="${icons.type}"></h2>
+        <h5 class="card-title _myavegetablecards-icons">${icons.name}</h5>
+      </div>
+    </div>
+    `;
+    return card;
+}
+
+function createUserCards(icons) {
+    const card = `
+    <div class="card text-center">
+      <div class="card-body">
+        <h2 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name} _myusercards-icons" alt="${icons.type}"></h2>
+        <h5 class="card-title _myusercards-icons">${icons.name}</h5>
       </div>
     </div>
     `;
@@ -186,15 +210,67 @@ function application() {
     //append 'div' to app general container
     app.appendChild(box);
 
-    //load array of elements to display
-    let content = '';
-    for (let i = 0; i < icons.length; i++) {
-        const template = createCards(icons[i]);
-        content += template;
+    //create three different array
+    const animalArray = [];
+    const vegetableArray = [];
+    const userArray = [];
+    //cycle for load icons array to new three different array
+    for(let y = 0; y < icons.length; y++){
+        if((icons[y].type == 'animal')){
+            animalArray.push(icons[y]);
+        }else if (icons[y].type == 'vegetable'){
+            vegetableArray.push(icons[y]);
+        }else{
+            userArray.push(icons[y]);
+        }
+    };
+    //animal
+    console.log(animalArray);
+    //vegetable
+    console.log(vegetableArray);
+    //user
+    console.log(userArray);
+
+    //load animal array of elements to display
+    let animalCards = '';
+    for (let i = 0; i < animalArray.length; i++) {
+        const template = createAnimalCards(animalArray[i]);
+        animalCards += template;
     }
     //console.log(content);
     //renderizzo tutte le cards
-    box.innerHTML += content;
+    box.innerHTML += animalCards;
+
+    //load vegetable array of elements to display
+    let vegetableCards = '';
+    for (let i = 0; i < vegetableArray.length; i++) {
+        const template = createVegetableCards(vegetableArray[i]);
+        vegetableCards += template;
+    }
+    //console.log(content);
+    //renderizzo tutte le cards
+    box.innerHTML += vegetableCards;
+
+    //load vegetable array of elements to display
+    let userCards = '';
+    for (let i = 0; i < userArray.length; i++) {
+        const template = createUserCards(userArray[i]);
+        userCards += template;
+    }
+    //console.log(content);
+    //renderizzo tutte le cards
+    box.innerHTML += userCards;
+
+
+
+    const allIcons = document.querySelectorAll('h2')
+    //console.log(allIcons);
+    for(let x = 0; x < allIcons.length; x++){
+        if(allIcons[x].type == 'animal'){
+            //console.log(allIcons[x]);
+        }
+    }
+    
 
 }
 

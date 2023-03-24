@@ -11,7 +11,9 @@
     --gunmetal: #162521ff;
     --outer-space: #3c474bff;
     --ice-blue: #9eefe5ff;
-    ;
+    --animal: #008000;
+    --vegetable: #fcfc01;
+    --user: #9d02b1;
 }
 
 body{
@@ -35,18 +37,28 @@ body{
     color: var(--ice-blue);
 }
 
-.container, .card h1{
+/* .container, .card h2{
     color: var(--ice-blue);
-}
+} */
 
 .card{
-    color: var(--mint-green);
+    /* color: var(--mint-green); */
     box-shadow: 2px 2px 5px var(--mint-green)!important;
     background-color: var(--outer-space);
     border-radius: 10px;
     width: calc((100% / 4) - 10px);
     cursor: pointer;
     margin: 5px;
+}
+
+._myanimalcards-icons{
+    color: var(--animal);
+}
+._myavegetablecards-icons{
+    color: var(--vegetable);
+}
+._myusercards-icons{
+    color: var(--user);
 }
 
 @media only screen and (max-width: 560px) {
