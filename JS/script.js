@@ -140,15 +140,20 @@ const icons = [
     }
 ];
 
-function application(){
-    
+function application() {
+
     //load app container to script
     const app = document.querySelector('.app');
     //console.log('app');
     //add style to app container
     app.classList.add('wrapper');
 
+    //create header
+    const header = document.createElement('header');
+    header.innerHTML = `
     
+    `
+
 }
 
 application();
