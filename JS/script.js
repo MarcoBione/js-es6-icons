@@ -179,15 +179,19 @@ function application() {
     //append header
     document.querySelector('.app').appendChild(header);
 
+    const box = document.createElement('div');
+    box.classList.add('container');
+    app.appendChild(box);
+
     //load array of elements to display
     let content = '';
     for (let i = 0; i < icons.length; i++) {
         const template = createCards(icons[i]);
         content += template;
     }
-    console.log(content);
+    //console.log(content);
     //renderizzo tutte le
-    app.innerHTML += content;
+    box.innerHTML += content;
 
 }
 
