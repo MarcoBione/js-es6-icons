@@ -182,7 +182,7 @@ function application() {
     //create a container for center the cards created
     const box = document.createElement('div');
     //add container bootstrap class to div
-    box.classList.add('container');
+    box.classList.add('container', 'd-flex', 'flex-wrap', 'px-2', 'py-4');
     //append 'div' to app general container
     app.appendChild(box);
 
