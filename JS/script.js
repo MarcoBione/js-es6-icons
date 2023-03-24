@@ -167,8 +167,10 @@ function application() {
     //append header
     document.querySelector('.app').appendChild(header);
 
-    
-
+    //load array of elements to display
+    for(let i = 0; i < icons.length; i++){
+        console.log(icons[i]);
+    }
 
 }
 
