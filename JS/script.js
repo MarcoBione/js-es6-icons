@@ -233,39 +233,102 @@ function application() {
     console.log(userArray);
 
     const selector = document.querySelector('select');
-    selector.addEventListener('change',() => {
-        console.log(selector.value)});
+    selector.addEventListener('change', () => {
+        console.log(selector.value);
+        switch (selector.value) {
+            case 'all':
+                displayAll();
+                break;
+            case 'animal':
+                displayAnimal();
+                break;
+            case 'vegetable':
+                displayVegetables();
+                break;
+            case 'user':
+                displayUsers();
+                break;
+            case 'default':
+                displayAll();
+                break;
+        }
+    });
 
 
-    //load animal array of elements to display
-    let animalCards = '';
-    for (let i = 0; i < animalArray.length; i++) {
-        const template = createAnimalCards(animalArray[i]);
-        animalCards += template;
+    function displayAll() {
+        //load animal array of elements to display
+        box.innerHTML=``
+        let animalCards = '';
+        for (let i = 0; i < animalArray.length; i++) {
+            const template = createAnimalCards(animalArray[i]);
+            animalCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += animalCards;
+
+        //load vegetable array of elements to display
+        let vegetableCards = '';
+        for (let i = 0; i < vegetableArray.length; i++) {
+            const template = createVegetableCards(vegetableArray[i]);
+            vegetableCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += vegetableCards;
+
+        //load vegetable array of elements to display
+        let userCards = '';
+        for (let i = 0; i < userArray.length; i++) {
+            const template = createUserCards(userArray[i]);
+            userCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += userCards;
     }
-    //console.log(content);
-    //renderizzo tutte le cards
-    box.innerHTML += animalCards;
 
-    //load vegetable array of elements to display
-    let vegetableCards = '';
-    for (let i = 0; i < vegetableArray.length; i++) {
-        const template = createVegetableCards(vegetableArray[i]);
-        vegetableCards += template;
+    function displayAnimal() {
+        box.innerHTML=``
+        //load animal array of elements to display
+        let animalCards = '';
+        for (let i = 0; i < animalArray.length; i++) {
+            const template = createAnimalCards(animalArray[i]);
+            animalCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += animalCards;
     }
-    //console.log(content);
-    //renderizzo tutte le cards
-    box.innerHTML += vegetableCards;
 
-    //load vegetable array of elements to display
-    let userCards = '';
-    for (let i = 0; i < userArray.length; i++) {
-        const template = createUserCards(userArray[i]);
-        userCards += template;
+    function displayVegetables() {
+        box.innerHTML=``
+        //load vegetable array of elements to display
+        let vegetableCards = '';
+        for (let i = 0; i < vegetableArray.length; i++) {
+            const template = createVegetableCards(vegetableArray[i]);
+            vegetableCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += vegetableCards;
+
     }
-    //console.log(content);
-    //renderizzo tutte le cards
-    box.innerHTML += userCards;
+
+    function displayUsers() {
+        box.innerHTML=``
+        //load vegetable array of elements to display
+        let userCards = '';
+        for (let i = 0; i < userArray.length; i++) {
+            const template = createUserCards(userArray[i]);
+            userCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += userCards;
+    }
+
+
 
 
 }
