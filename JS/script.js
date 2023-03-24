@@ -151,8 +151,24 @@ function application() {
     //create header
     const header = document.createElement('header');
     header.innerHTML = `
+    <div class="container"
+        <!-- title -->
+        <h1 class="_mytitle">Choose icon!</h1>
+        <!-- /title -->
+        <!-- options -->
+        <select class="form-select _myselectbar py-0">
+            <option value="all" selected class="_myoptions">All</option>
+            <option value="vegetables" class="_myoptions">Vegetables</option>
+            <option value="Users" class="_myoptions">Users</option>
+        </select>
+        <!-- /options --
+    </div>
+    `;
+    //append header
+    document.querySelector('.app').appendChild(header);
+
     
-    `
+
 
 }
 

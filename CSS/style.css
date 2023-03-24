@@ -6,15 +6,28 @@
 
 /* CSS HEX COLORS PALETTE*/
 :root {
-    --sage: #b5ba72ff;
-    --battleship-gray: #99907dff;
-    --mountbatten-pink: #7d6f86ff;
-    --ultra-violet: #585191ff;
-    --tekhelet: #4f359bff;
+    --steel-blue: #4f7cacff;
+    --mint-green: #c0e0deff;
+    --gunmetal: #162521ff;
+    --outer-space: #3c474bff;
+    --ice-blue: #9eefe5ff;
+    ;
 }
 
 .wrapper {
     width: 100%;
     height: 100vh;
-    background-color: var(--mountbatten-pink);
+    background-color: var(--gunmetal);
+}
+
+/* header */
+._myselectbar, ._myoptions {
+    background-color: var(--mint-green);
+    color: var(--steel-blue);
+    font-weight: bold;
+    width: 10%;
+}
+
+._mytitle{
+    color: var(--ice-blue);
 }
