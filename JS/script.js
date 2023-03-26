@@ -143,7 +143,7 @@ const icons = [
 function createAnimalCards(icons) {
     const card = `
     <div class="card text-center">
-      <div class="card-body">
+      <div class="card-body" id="animalCard">
         <h2 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name} _myanimalcards-icons" alt="${icons.type}"></h2>
         <h5 class="card-title _myanimalcards-icons">${icons.name}</h5>
       </div>
@@ -155,7 +155,7 @@ function createAnimalCards(icons) {
 function createVegetableCards(icons) {
     const card = `
     <div class="card text-center">
-      <div class="card-body">
+      <div class="card-body" id="vegetableCard">
         <h2 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name} _myavegetablecards-icons" alt="${icons.type}"></h2>
         <h5 class="card-title _myavegetablecards-icons">${icons.name}</h5>
       </div>
@@ -167,7 +167,7 @@ function createVegetableCards(icons) {
 function createUserCards(icons) {
     const card = `
     <div class="card text-center">
-      <div class="card-body">
+      <div class="card-body" id="userCard">
         <h2 class="${icons.prefix}${icons.family} ${icons.prefix}${icons.name} _myusercards-icons" alt="${icons.type}"></h2>
         <h5 class="card-title _myusercards-icons">${icons.name}</h5>
       </div>
@@ -177,6 +177,84 @@ function createUserCards(icons) {
 }
 
 function application() {
+
+    function displayAll() {
+        //load animal array of elements to display
+        box.innerHTML=``;
+        let animalCards = '';
+        for (let i = 0; i < animalArray.length; i++) {
+            const template = createAnimalCards(animalArray[i]);
+            animalCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += animalCards;
+
+        //load vegetable array of elements to display
+        let vegetableCards = '';
+        for (let i = 0; i < vegetableArray.length; i++) {
+            const template = createVegetableCards(vegetableArray[i]);
+            vegetableCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += vegetableCards;
+
+        //load vegetable array of elements to display
+        let userCards = '';
+        for (let i = 0; i < userArray.length; i++) {
+            const template = createUserCards(userArray[i]);
+            userCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += userCards;
+    }
+
+    function displayAnimal() {
+        box.innerHTML=``;
+        //load animal array of elements to display
+        let animalCards = '';
+        for (let i = 0; i < animalArray.length; i++) {
+            const template = createAnimalCards(animalArray[i]);
+            animalCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += animalCards;
+    }
+
+    function displayVegetables() {
+        box.innerHTML=``;
+        //load vegetable array of elements to display
+        let vegetableCards = '';
+        for (let i = 0; i < vegetableArray.length; i++) {
+            const template = createVegetableCards(vegetableArray[i]);
+            vegetableCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += vegetableCards;
+
+    }
+
+    function displayUsers() {
+        box.innerHTML=``;
+        //load vegetable array of elements to display
+        let userCards = '';
+        for (let i = 0; i < userArray.length; i++) {
+            const template = createUserCards(userArray[i]);
+            userCards += template;
+        }
+        //console.log(content);
+        //renderizzo tutte le cards
+        box.innerHTML += userCards;
+    }
+
+    function cleanScreen(){
+        box.innerHTML=``;
+        console.log('ce sta!');
+    }
 
     //load app container to script
     const app = document.querySelector('.app');
@@ -235,101 +313,33 @@ function application() {
     const selector = document.querySelector('select');
     selector.addEventListener('change', () => {
         console.log(selector.value);
+        
         switch (selector.value) {
             case 'all':
+                cleanScreen()
                 displayAll();
                 break;
             case 'animal':
+                cleanScreen()
                 displayAnimal();
                 break;
-            case 'vegetable':
+            case 'vegetables':
+                cleanScreen()
                 displayVegetables();
                 break;
-            case 'user':
+            case 'Users':
+                cleanScreen()
                 displayUsers();
                 break;
             case 'default':
+                cleanScreen()
                 displayAll();
                 break;
         }
     });
 
 
-    function displayAll() {
-        //load animal array of elements to display
-        box.innerHTML=``
-        let animalCards = '';
-        for (let i = 0; i < animalArray.length; i++) {
-            const template = createAnimalCards(animalArray[i]);
-            animalCards += template;
-        }
-        //console.log(content);
-        //renderizzo tutte le cards
-        box.innerHTML += animalCards;
-
-        //load vegetable array of elements to display
-        let vegetableCards = '';
-        for (let i = 0; i < vegetableArray.length; i++) {
-            const template = createVegetableCards(vegetableArray[i]);
-            vegetableCards += template;
-        }
-        //console.log(content);
-        //renderizzo tutte le cards
-        box.innerHTML += vegetableCards;
-
-        //load vegetable array of elements to display
-        let userCards = '';
-        for (let i = 0; i < userArray.length; i++) {
-            const template = createUserCards(userArray[i]);
-            userCards += template;
-        }
-        //console.log(content);
-        //renderizzo tutte le cards
-        box.innerHTML += userCards;
-    }
-
-    function displayAnimal() {
-        box.innerHTML=``
-        //load animal array of elements to display
-        let animalCards = '';
-        for (let i = 0; i < animalArray.length; i++) {
-            const template = createAnimalCards(animalArray[i]);
-            animalCards += template;
-        }
-        //console.log(content);
-        //renderizzo tutte le cards
-        box.innerHTML += animalCards;
-    }
-
-    function displayVegetables() {
-        box.innerHTML=``
-        //load vegetable array of elements to display
-        let vegetableCards = '';
-        for (let i = 0; i < vegetableArray.length; i++) {
-            const template = createVegetableCards(vegetableArray[i]);
-            vegetableCards += template;
-        }
-        //console.log(content);
-        //renderizzo tutte le cards
-        box.innerHTML += vegetableCards;
-
-    }
-
-    function displayUsers() {
-        box.innerHTML=``
-        //load vegetable array of elements to display
-        let userCards = '';
-        for (let i = 0; i < userArray.length; i++) {
-            const template = createUserCards(userArray[i]);
-            userCards += template;
-        }
-        //console.log(content);
-        //renderizzo tutte le cards
-        box.innerHTML += userCards;
-    }
-
-
-
+    
 
 }
 
