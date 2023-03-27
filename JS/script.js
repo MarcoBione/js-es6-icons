@@ -337,9 +337,8 @@ function application() {
                 break;
         }
     });
-
-
-    
+    //first stamp
+    displayAll();    
 
 }
 
